@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { DetailedViewComponent } from './detailed-view/detailed-view.component';
+import { SummaryViewComponent } from './summary-view/summary-view.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CommonModule, DetailedViewComponent, SummaryViewComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
+
 export class AppComponent {
   title = 'DemoAngular';
+  activeTab = 'summary';
 }

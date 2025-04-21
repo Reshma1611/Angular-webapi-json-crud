@@ -1,0 +1,23 @@
+<div class="table-container">
+    <table *ngIf="sampleData" class="table">
+      <thead>
+        <tr>
+          <th>Sampling Time</th>
+          <th>Project Name</th>
+          <th>Construction Count</th>
+          <th>Is Construction Completed</th>
+          <th>Length of the Road</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of sampleData.datas">
+          <td>{{ data.samplingTime | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+          <td>{{ getPropertyValue(data.properties, 'Project Name') }}</td>
+          <td>{{ getPropertyValue(data.properties, 'Construction Count') }}</td>
+          <td>{{ getPropertyValue(data.properties, 'Is Construction Completed') }}</td>
+          <td>{{ getPropertyValue(data.properties, 'Length of the road') }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
