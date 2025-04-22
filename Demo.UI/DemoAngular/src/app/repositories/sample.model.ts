@@ -5,12 +5,12 @@ export interface Sample {
     datas: Datas[];
   }
   
-  export interface Datas {
-    samplingTime: Date;
-    properties: Properties[];
-  }
+export interface Datas {
+  samplingTime: Date;
+  properties: Properties[];
+}
   
-  export interface Properties {
-    value: any;  
-    label: string;
-  }
+export interface Properties {
+  value: any;  
+  label: string;
+}

@@ -1,9 +1,13 @@
-<nav class="tabs">
-  <button (click)="activeTab = 'summary'" [class.active]="activeTab === 'summary'">Summary</button>
-  <button (click)="activeTab = 'detailed'" [class.active]="activeTab === 'detailed'">Detailed</button>
-</nav>
+<div class="container">
+  <div class="main">
+  <nav class="tabs">
+    <button (click)="activeTab = 'summary'" [class.active]="activeTab === 'summary'">Summary</button>
+    <button (click)="activeTab = 'detailed'" [class.active]="activeTab === 'detailed'">Detailed</button>
+  </nav>
 
-<div class="tab-content">
-  <app-summary-view *ngIf="activeTab === 'summary'"></app-summary-view>
-  <app-detailed-view *ngIf="activeTab === 'detailed'"></app-detailed-view>
+  <div class="tab-content">
+    <app-summary-view *ngIf="activeTab === 'summary'"></app-summary-view>
+    <app-detailed-view *ngIf="activeTab === 'detailed'"></app-detailed-view>
+  </div>
+</div>
 </div>

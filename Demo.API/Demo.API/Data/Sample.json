@@ -6,15 +6,15 @@
       "SamplingTime": "2021-04-21T11:00:05.5051255+05:30",
       "Properties": [
         {
-          "Value": "Road Construction 1",
+          "Value": "Road Construction 89",
           "Label": "Project Name"
         },
         {
-          "Value": 40,
+          "Value": 400,
           "Label": "Construction Count"
         },
         {
-          "Value": false,
+          "Value": true,
           "Label": "Is Construction Completed"
         },
         {
@@ -29,6 +29,10 @@
         {
           "Value": "Road Construction 2",
           "Label": "Project Name"
+        },
+        {
+          "Value": 200,
+          "Label": "Construction Count"
         },
         {
           "Value": true,
@@ -48,8 +52,16 @@
           "Label": "Project Name"
         },
         {
-          "Value": false,
-          "Label": "Is COnstruction Completed"
+          "Value": 12,
+          "Label": "Construction Count"
+        },
+        {
+          "Value": true,
+          "Label": "Is Construction Completed"
+        },
+        {
+          "Value": 1.2,
+          "Label": "Length of the road"
         }
       ]
     }

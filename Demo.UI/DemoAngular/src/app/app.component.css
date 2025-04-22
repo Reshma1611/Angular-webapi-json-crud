@@ -17,8 +17,11 @@
   }
   
   .tab-content {
-    border: 1px solid #ccc;
-    padding: 16px;
-    border-radius: 5px;
+    /* border: 1px solid #ccc; */
+    /* padding: 16px; */
+    /* border-radius: 5px; */
   }
   
+  .main {
+    padding: 16px;
+  }

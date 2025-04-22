@@ -2,23 +2,7 @@ import { Component, OnInit, inject  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule} from '@angular/common/http';
 import {SampleRepository } from './../repositories/sample.repository'
-
-
-export interface Sample {
-  id: number;
-  name: string;
-  datas: Datas[];
-}
-
-export interface Datas {
-  samplingTime: Date;
-  properties: Properties[];
-}
-
-export interface Properties {
-  value: any;
-  label: string;
-}
+import { Properties, Sample } from '../repositories/sample.model';
 
 @Component({
   selector: 'app-summary-view',
@@ -28,18 +12,23 @@ export interface Properties {
   providers: [SampleRepository]
 })
 
-
 export class SummaryViewComponent implements OnInit {
-  sampleData?: Sample;
+  sampleData: Sample | null = null;
 
-  // constructor(private repository: SampleRepository) {}
  private readonly _repository = inject(SampleRepository)
 
   ngOnInit(): void {
-    this._repository.getData().subscribe({
-      next: data => {
-        this.sampleData = data;
-        console.log("Sample data:", data);
+    this._repository.getAll().subscribe({
+      next: (response) => {
+
+        if(response.status == 200)
+          {
+            this.sampleData = response.body;
+          }
+          else if(response.status == 500)
+          {
+            console.log("Something went wrong!")
+          }
       },
       error: err => {
         console.error("API Error:", err);
